@@ -29,9 +29,11 @@ int main()
     }
     else
     {
-        write(pipefds[1],writemessages[0],sizeof(writemessages[0]));
         printf("parent process  - sending to pipe message = %s\n",writemessages[0]);
-        write(pipefds[1],writemessages[1],sizeof(writemessages[1]));
+       write(pipefds[1],writemessages[0],sizeof(writemessages[0]));
+
         printf("parent process  - sending to pipe message = %s\n",writemessages[1]);
+        write(pipefds[1],writemessages[1],sizeof(writemessages[1]));
+
     }
 }
